@@ -4,7 +4,7 @@ mongoose.set('strictQuery', false);
 
 const connectDataBase = () => {
 
-    mongoose.connect(process.env.DB_URL, {
+    mongoose.connect("mongodb+srv://anilreact:anilreact@cluster0.euclhnk.mongodb.net/e-commerce-app?retryWrites=true&w=majority", {
         useNewUrlParser: true,
         useUnifiedTopology: true,
 
