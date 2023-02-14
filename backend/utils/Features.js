@@ -5,15 +5,14 @@ class Features {
     }
 
     search() {
-        const keyword = this.queryStr.keyword ? {
-            name: {
-                $regex: this.queryStr.keyword,
-                $options: "i"
+        const keyword = this.queryStr.keyword
+            ? {
+                name: {
+                    $regex: this.queryStr.keyword,
+                    $options: 'i',
+                },
             }
-        }
-            : {
-
-            }
+            : {};
         this.query = this.query.find({ ...keyword });
         return this;
     }
@@ -22,7 +21,7 @@ class Features {
         const queryCopy = { ...this.queryStr };
 
         // Removing some field for category
-        const removeFields = ["keyword", "page", "limit"];
+        const removeFields = ['keyword', 'page', 'limit'];
 
         removeFields.forEach((key) => delete queryCopy[key]);
 
@@ -38,7 +37,6 @@ class Features {
 
         return this;
     }
-
 }
 
 module.exports = Features;
